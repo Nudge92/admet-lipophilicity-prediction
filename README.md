@@ -32,7 +32,7 @@
 
 
 ![Advanced Decision Metrics](results/hybrid-model-result3.png)
-*▲ AUPRC, EF@5%, Precision@10% 등 추가 의사결정 지표*
+*▲ 최종 하이브리드 모델의 ROC Curve (AUC = 0.88)*
 
 ### 베이스라인 모델과의 성능 비교
 
