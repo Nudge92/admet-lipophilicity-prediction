@@ -1,0 +1,31 @@
+# 파일 이름: sweep_config.yaml (수정본)
+
+method: bayes
+metric:
+  name: val_auprc
+  goal: maximize
+program: src/21_wandb_sweep.py  # <-- 실행할 스크립트 파일 경로 추가
+
+command:                       # <-- W&B가 실행할 명령어 구조 추가
+  - ${env}
+  - ${interpreter}
+  - ${program}
+  - ${args}
+
+parameters:
+  n_estimators:
+    values: [500, 1000, 1500, 2000]
+  max_depth:
+    values: [3, 5, 7, 9]
+  learning_rate:
+    distribution: uniform
+    min: 0.01
+    max: 0.2
+  subsample:
+    distribution: uniform
+    min: 0.6
+    max: 1.0
+  colsample_bytree:
+    distribution: uniform
+    min: 0.6
+    max: 1.0
