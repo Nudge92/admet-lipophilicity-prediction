@@ -25,10 +25,7 @@
 
 ## 🏆 성능 하이라이트 (Performance Highlights)
 
-개발된 최종 하이브리드 모델은 다른 베이스라인 모델들을 뛰어넘는 가장 우수한 예측 성능을 달성했습니다.
-
-![Model Performance Comparison](results/hybrid-model-result.png)
-*▲ 모델 성능 비교표*
+GAT 임베딩과 ChemBERTa 표현을 결합한 하이브리드 모델을 ChemBERTa 단독과 동일한 스캐폴드 분할에서 비교했습니다. 결과는 아래 「베이스라인 모델과의 성능 비교」에 있습니다.
 
 
 ![Advanced Decision Metrics](results/hybrid-model-result3.png)
@@ -38,7 +35,12 @@
 
 하이브리드 모델의 AUPRC 는 **0.630** [0.551, 0.696], ChemBERTa 단독은 **0.591** [0.511, 0.666] 입니다. 차이는 **+0.039**, 부트스트랩 **p = 0.0840** 으로 0.05 기준에서 **통계적으로 유의하지 않습니다.** 두 모델의 신뢰구간도 겹칩니다 — 이 데이터로는 둘을 구분할 근거가 없습니다.
 
-*▲ ECFP+XGB, GNN(GAT), ChemBERTa 모델과 최종 하이브리드 모델의 AUPRC 성능 비교표*
+| 모델 | AUPRC (95% CI) | ΔAUPRC vs ChemBERTa | p-value |
+|---|---|---|---|
+| ChemBERTa 단독 | 0.591 [0.511, 0.666] | 기준 | — |
+| Hybrid (GAT 임베딩 + ChemBERTa) | 0.630 [0.551, 0.696] | +0.039 | 0.0840 |
+
+AUPRC 는 부트스트랩 신뢰구간이며, 두 모델의 차이는 0.05 기준에서 유의하지 않습니다.
 
 ### 추가 의사결정 지표 (Advanced Metrics)
 
